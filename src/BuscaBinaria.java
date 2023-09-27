@@ -75,7 +75,6 @@ public class BuscaBinaria implements ArvoreBinariaInterface {
             2) Verificar os filhos e encontrar o menor deles
             3) Guarda a informação do menor
             4) invoca o método de delete passando os novos paramentros: valor e o nó em questão
-
         */
     return node;
    }
