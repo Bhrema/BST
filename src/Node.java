@@ -1,13 +1,13 @@
 public class Node {
-    int data;
-    Node left;
-    Node right;
-    Node parent;
-    public Node(int data) {
-        this.data = data;
+    int numero;
+    Node esquerda;
+    Node direita;
+    Node pai;
+    public Node(int numero) {
+        this.numero = numero;
     }
 
-    public int getData() {
-        return data;
+    public int getNumero() {
+        return numero;
     }
 }
