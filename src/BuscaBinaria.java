@@ -48,7 +48,35 @@ public class BuscaBinaria implements ArvoreBinariaInterface {
     }
 
     @Override
-    public void DeletaNode(int key) {
-
+    public void DeletaNode(int posicao) {
+        root = DeletaNode(posicao, root);
     }
+   public Node DeletaNode(int posicao, Node node) {
+        if (node == null) {
+            return null;
+        }
+        if (posicao < node.numero) {
+            node.esquerda = DeletaNode(posicao, node.esquerda);
+        } else if (posicao > node.numero) {
+            node.direita = DeletaNode(posicao, node.direita);
+        }
+
+        else if (node.esquerda == null && node.direita == null) {
+            node = null;
+        }
+
+        else if (node.esquerda == null) {
+            node = node.direita;
+        } else if (node.direita == null) {
+            node = node.esquerda;
+        }
+        /**TODO Aqui é preciso ainda verificar quando a deleção é feita em um nó com dois filhos
+            1) Criar um método que receba um node
+            2) Verificar os filhos e encontrar o menor deles
+            3) Guarda a informação do menor
+            4) invoca o método de delete passando os novos paramentros: valor e o nó em questão
+
+        */
+    return node;
+   }
 }
