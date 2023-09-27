@@ -24,12 +24,27 @@ public class BuscaBinaria implements ArvoreBinariaInterface {
             }
         }
 
-        return null; // Retorne null se o nó não for encontrado.
+        return null;
     }
 
     @Override
-    public void InsereNode(int key) {
+    public void InsereNode(int posicao) {
+        root = InsereNode(posicao, root);
+    }
+    public Node InsereNode(int posicao, Node node) {
+        if (node == null) {
+            return new Node(posicao);
+        }
 
+        if (posicao < node.numero) {
+            node.esquerda = InsereNode(posicao, node.esquerda);
+        } else if (posicao > node.numero) {
+            node.direita = InsereNode(posicao, node.direita);
+        } else {
+            throw new IllegalArgumentException("A árvore já possui esse valor " + posicao);
+        }
+
+        return node;
     }
 
     @Override
